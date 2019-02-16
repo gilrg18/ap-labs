@@ -1,0 +1,66 @@
+diff --git a/challenges/chal2/dir-scan.go b/challenges/chal2/dir-scan.go
+index 9843134..e7e5118 100644
+--- a/challenges/chal2/dir-scan.go
++++ b/challenges/chal2/dir-scan.go
+@@ -3,10 +3,41 @@ package main
+ import (
+ 	"fmt"
+ 	"os"
++	"path/filepath"
+ )
+ 
+ // scanDir stands for the directory scanning implementation
+-func scanDir(dir string) error {
++func scanDir(root string) error {
++
++	dirs := 0
++	files := 0
++	var ff = func(pathX string, infoX os.FileInfo, errX error) error {
++
++		if errX != nil {
++			return errX
++		}
++
++		if infoX.IsDir() {
++			dirs++
++		} else {
++			files++
++		}
++
++		return nil
++	}
++
++	err := filepath.Walk(root, ff)
++
++	fmt.Printf("\n\n%s\n", root)
++	fmt.Println("--------------------------")
++	fmt.Printf("Directories %d\n", dirs)
++	fmt.Println("--------------------------")
++	fmt.Printf("Files %d", files)
++
++	if err != nil {
++		return fmt.Errorf("error walking the path %s: %v\n", root, err)
++	}
++
+ 	return nil
+ }
+ 
+@@ -18,4 +49,4 @@ func main() {
+ 	}
+ 
+ 	scanDir(os.Args[1])
+-}
++}
+\ No newline at end of file
+diff --git a/challenges/chal2/dmesg-analyzer.c b/challenges/chal2/dmesg-analyzer.c
+index aaa0e93..c73914d 100644
+--- a/challenges/chal2/dmesg-analyzer.c
++++ b/challenges/chal2/dmesg-analyzer.c
+@@ -20,6 +20,7 @@ void analizeLog(char *logFile, char *report) {
+     printf("Generating Report from: [%s] log file\n", logFile);
+ 
+     // Implement your solution here.
++    
+ 
+     printf("Report is generated at: [%s]\n", report);
+ }
