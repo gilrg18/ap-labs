@@ -16,6 +16,8 @@ General Requirements and Considerations
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
+To Compile
+---------------------------------------
  gcc -c logger.c -o logger.o
 
  gcc -c monitor.c -o monitor.o
