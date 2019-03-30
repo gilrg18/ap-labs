@@ -177,7 +177,7 @@ void processLine(char *line){
           strcmp(buffer, "thre") == 0){
 
 	        if(line[i] != ' ' && line[i] != ':' && line[i] != '\t' && line[i] != '\n'){
-		          [j] = line[i];
+		          data[j] = line[i];
 		      	  j++;
 	        }	
 
