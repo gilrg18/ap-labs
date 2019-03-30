@@ -85,8 +85,8 @@ func handleConn(conn net.Conn) {
 
 	who := conn.RemoteAddr().String()
 	ch <- "Welcome to the Simple IRC Server."
-	ch <- "Your IP is " + who
-	ch <- "Introduce your username: "
+	ch <- "IP: " + who
+	ch <- "Set Username: "
 	input := bufio.NewScanner(conn)
 	for input.Scan() {
 		inputChat := strings.Split(input.Text(), " ")
@@ -116,7 +116,7 @@ func handleConn(conn net.Conn) {
 						}
 					}
 					if showed == 0 {
-						ch <- "Not found"
+						ch <- "Error"
 					}
 				} else {
 					ch <- "Usage: /user <username>"
