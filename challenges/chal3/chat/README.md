@@ -86,6 +86,3 @@ Useful links
 - https://github.com/adonovan/gopl.io/tree/master/ch8/netcat3
 - https://golang.org/pkg/flag/
 
-go run server.go
-
-go run client.go
