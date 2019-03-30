@@ -48,5 +48,4 @@ Useful links and resources
 
 
 gcc mytop.c -o mytop
-
 ./mytop
