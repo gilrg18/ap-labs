@@ -18,7 +18,7 @@ The program is very simple according to what the user can do. It is more focused
 ## Architecture
 ![architecture](images/architecture.png)
 
-The running program is really simple. It is composed from only one class. Everything is handled in here. Inputs/outputs, processing, and anything related is the *ballsRainingSimilation* program. No extra agents or master components are needed. 
+The running program is really simple. It is composed from only one class. Everything is handled in here. Inputs/outputs, processing, and anything related is the *ballsRainingSimulator* program. No extra agents or master components are needed. 
 
 ## Multithreading
 The ``startRain()`` function is the key of the multithreading in the program. It first create the goroutines, then the wg (waitgroup) variable is in charge of waiting for all the goroutines to be completed to finish the program.
